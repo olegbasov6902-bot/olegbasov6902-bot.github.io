@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости заказа</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="calculator">
+        <h1>Калькулятор стоимости заказа</h1>
+        
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="product">Выберите товар:</label>
+                <select id="product" name="product" required>
+                    <option value="">-- Выберите товар --</option>
+                    <option value="1990">Смартфон - 1 990 ₽</option>
+                    <option value="4590">Ноутбук - 4 590 ₽</option>
+                    <option value="1290">Наушники - 1 290 ₽</option>
+                    <option value="890">Клавиатура - 890 ₽</option>
+                    <option value="2590">Планшет - 2 590 ₽</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Количество товара:</label>
+                <input 
+                    type="text" 
+                    id="quantity" 
+                    name="quantity" 
+                    placeholder="Введите количество" 
+                    required
+                >
+                <div class="error" id="quantityError">
+                    Пожалуйста, введите корректное количество (только цифры от 1 до 999)
+                </div>
+            </div>
+            
+            <button type="submit" id="calculateBtn">Рассчитать стоимость</button>
+        </form>
+        
+        <div class="error-message" id="errorMessage"></div>
+        
+        <div class="result" id="result" style="display: none;">
+            <strong>Стоимость заказа: <span id="totalPrice">0</span> ₽</strong>
+        </div>
+    </div>
+
+    <script src="calculator.js" defer></script>
+</body>
+</html>
