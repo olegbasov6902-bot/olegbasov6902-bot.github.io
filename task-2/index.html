@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="Lotus_flower.jpg" alt="Логотип сайта" width="50" height="50">
+                </div>
+                <nav class="nav">
+                    <a href="#links" class="nav-link">Ссылки</a>
+                    <a href="#table" class="nav-link">Таблица</a>
+                    <a href="#form" class="nav-link">Форма</a>
+                </nav>
+            </div>
+            <h1 class="site-title">Мой личный сайт</h1>
+        </div>
+    </header>
+
+    <main class="main container">
+        <section id="links" class="section">
+            <h2>Маркированный список гиперссылок</h2>
+            
+            <ul class="links-list">
+                <li><a href="http://kubsu.ru">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
+                <li><a href="https://kubsu.ru">Абсолютная на главную сайта kubsu.ru в протоколе https</a></li>
+                <li><a href="https://kubsu.ru"><img src="Логотип_КубГУ.png" width="200" height="200" alt="Ссылка-изображение"></a></li>
+                <li><a href="/internal-page">Сокращенная ссылка на внутреннюю страницу</a></li>
+                <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
+                <li><a href="#fragment">Ссылка на фрагмент текущей страницы</a></li>
+                <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a></li>
+                <li><a href="https://example.com/page?id=123">Ссылка с параметром id в URL</a></li>
+                <li><a href="current-page.html">Относительная на страницу в текущем каталоге</a></li>
+                <li><a href="about/page.html">Относительная на страницу в каталоге about</a></li>
+                <li><a href="../page.html">Относительная на страницу в каталоге уровнем выше текущего</a></li>
+                <li><a href="../../page.html">Относительная на страницу в каталоге двумя уровнями выше</a></li>
+                <li>Это <a href="https://example.com">контекстная ссылка</a> в тексте абзаца</li>
+                <li><a href="https://example.com/page#section">Ссылка на фрагмент страницы стороннего сайта</a></li>
+                <li>
+                    <img src="square_and_circle.jpeg" width="550" height="200" alt="Image map" usemap="#image-map">
+                    <map name="image-map">
+                        <area shape="rect" coords="50,50,250,150" href="https://example.com/rect" alt="Прямоугольная область">
+                        <area shape="circle" coords="400,100,40" href="https://example.com/circle" alt="Круглая область">
+                    </map>
+                </li>
+                <li><a href="">Ссылка с пустым href</a></li>
+                <li><a>Ссылка без href</a></li>
+                <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+                <li><a href="https://example.com" rel="noindex,nofollow">Запрещенная для индексации поисковиками</a></li>
+                <li>
+                    <ol>
+                        <li><a href="https://example.com/1" title="Подпись к первой ссылке">Ссылка 1</a></li>
+                        <li><a href="https://example.com/2" title="Подпись ко второй ссылке">Ссылка 2</a></li>
+                        <li><a href="https://example.com/3" title="Подпись к третьей ссылке">Ссылка 3</a></li>
+                    </ol>
+                </li>
+                <li><a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+            </ul>
+
+            <h2 id="fragment">Фрагмент страницы</h2>
+            <p>Это фрагмент, на который ведет ссылка из списка.</p>
+        </section>
+
+        <section id="table" class="section">
+            <h2>Таблица</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Наименование</th>
+                        <th>Категория</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ноутбук ASUS</td>
+                        <td>Электроника</td>
+                        <td>75000 ₽</td>
+                        <td>5</td>
+                        <td rowspan="2">В наличии</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Мышь беспроводная</td>
+                        <td>Аксессуары</td>
+                        <td>2500 ₽</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Монитор Samsung</td>
+                        <td>Электроника</td>
+                        <td>32000 ₽</td>
+                        <td>3</td>
+                        <td>Ожидается</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Клавиатура механическая</td>
+                        <td>Аксессуары</td>
+                        <td>5800 ₽</td>
+                        <td>8</td>
+                        <td>В наличии</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Колонки stereo</td>
+                        <td>Аудио</td>
+                        <td>4200 ₽</td>
+                        <td>6</td>
+                        <td>В наличии</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Итого товаров:</td>
+                        <td>119500 ₽</td>
+                        <td>37</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="form" class="section">
+            <h2>Форма</h2>
+            
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                
+                <div class="form-group">
+                    <span class="label">Пол:</span>
+                    <label class="radio-label"><input type="radio" name="gender" value="male" required> Мужской</label>
+                    <label class="radio-label"><input type="radio" name="gender" value="female"> Женский</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="programming-languages">Любимый язык программирования:</label>
+                    <select id="programming-languages" name="languages[]" multiple size="6">
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bio">Биография:</label>
+                    <textarea id="bio" name="bio" rows="5"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="agreement" required> 
+                        С контрактом ознакомлен(а)
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Сохранить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Олег Басов</p>
+        </div>
+    </footer>
+</body>
+</html>
