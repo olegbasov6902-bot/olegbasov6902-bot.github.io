@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости услуги</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="calculator">
+        <h1>Калькулятор стоимости услуги</h1>
+        
+        <form id="serviceForm">
+            <div class="form-group">
+                <label for="quantity">Количество:</label>
+                <input 
+                    type="number" 
+                    id="quantity" 
+                    name="quantity" 
+                    min="1" 
+                    max="100" 
+                    value="1" 
+                    required
+                >
+            </div>
+            
+            <div class="form-group">
+                <label>Тип услуги:</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="serviceType" value="basic" checked>
+                        Базовая услуга
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="serviceType" value="premium">
+                        Премиум услуга
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="serviceType" value="custom">
+                        Кастомная услуга
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group option-group hidden" id="optionsGroup">
+                <label for="serviceOption">Опция услуги:</label>
+                <select id="serviceOption" name="serviceOption">
+                    <option value="standard">Стандартная опция</option>
+                    <option value="advanced">Продвинутая опция</option>
+                    <option value="enterprise">Корпоративная опция</option>
+                </select>
+            </div>
+            
+            <div class="form-group option-group hidden" id="propertyGroup">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="extraProperty" name="extraProperty">
+                    Дополнительное свойство (ускоренная обработка)
+                </label>
+            </div>
+        </form>
+        
+        <div class="result">
+            <h3>Общая стоимость:</h3>
+            <div class="total-price">
+                <span id="totalPrice">0</span>
+                <span class="currency">₽</span>
+            </div>
+            <div class="price-breakdown" id="priceBreakdown"></div>
+        </div>
+    </div>
+
+    <script src="calculator.js" defer></script>
+</body>
+</html>
