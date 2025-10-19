@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный сайт</title>
+</head>
+<body>
+    <h1>Маркированный список гиперссылок</h1>
+    
+    <ul>
+        <li><a href="http://kubsu.ru">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
+        <li><a href="https://kubsu.ru">Абсолютная на главную сайта kubsu.ru в протоколе https</a></li>
+        <li><a href="https://kubsu.ru"><img src="Логотип_КубГУ.png" width = 200 heigth = 200 alt="Ссылка-изображение"></a></li>
+        <li><a href="/internal-page">Сокращенная ссылка на внутреннюю страницу</a></li>
+        <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
+        <li><a href="#fragment">Ссылка на фрагмент текущей страницы</a></li>
+        <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a></li>
+        <li><a href="https://example.com/page?id=123">Ссылка с параметром id в URL</a></li>
+        <li><a href="current-page.html">Относительная на страницу в текущем каталоге</a></li>
+        <li><a href="about/page.html">Относительная на страницу в каталоге about</a></li>
+        <li><a href="../page.html">Относительная на страницу в каталоге уровнем выше текущего</a></li>
+        <li><a href="../../page.html">Относительная на страницу в каталоге двумя уровнями выше</a></li>
+        <li>Это <a href="https://example.com">контекстная ссылка</a> в тексте абзаца</li>
+        <li><a href="https://example.com/page#section">Ссылка на фрагмент страницы стороннего сайта</a></li>
+        <li>
+            <img src="square_and_circle.jpeg" width = 550 height = 200 alt="Image map" usemap="#image-map">
+            <map name="image-map">
+                <area shape="rect" coords="50,50,250,150" href="https://example.com/rect" alt="Прямоугольная область">
+                <area shape="circle" coords="400,100,40" href="https://example.com/circle" alt="Круглая область">
+            </map>
+        </li>
+        <li><a href="">Ссылка с пустым href</a></li>
+        <li><a>Ссылка без href</a></li>
+        <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+        <li><a href="https://example.com" rel="noindex, nofollow">Запрещенная для индексации поисковиками</a></li>
+        <li>
+            <ol>
+                <li><a href="https://example.com/1" title="Подпись к первой ссылке">Ссылка 1</a></li>
+                <li><a href="https://example.com/2" title="Подпись ко второй ссылке">Ссылка 2</a></li>
+                <li><a href="https://example.com/3" title="Подпись к третьей ссылке">Ссылка 3</a></li>
+            </ol>
+        </li>
+        <li><a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+    </ul>
+
+    <h2 id="fragment">Фрагмент страницы</h2>
+    <p>Это фрагмент, на который ведет ссылка из списка.</p>
+
+    <h1>Форма</h1>
+    
+    <form action="#" method="post">
+        <p>
+            <label for="fio">ФИО:</label>
+            <input type="text" id="fio" name="fio" required>
+        </p>
+        
+        <p>
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </p>
+        
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        
+        <p>
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </p>
+        
+        <p>
+            Пол:
+            <label><input type="radio" name="gender" value="male" required> Мужской</label>
+            <label><input type="radio" name="gender" value="female"> Женский</label>
+        </p>
+        
+        <p>
+            <label for="programming-languages">Любимый язык программирования:</label>
+            <select id="programming-languages" name="languages[]" multiple size="6">
+                <option value="pascal">Pascal</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="haskel">Haskel</option>
+                <option value="clojure">Clojure</option>
+                <option value="prolog">Prolog</option>
+                <option value="scala">Scala</option>
+            </select>
+        </p>
+        
+        <p>
+            <label for="bio">Биография:</label><br>
+            <textarea id="bio" name="bio" rows="5" cols="50"></textarea>
+        </p>
+        
+        <p>
+            <label><input type="checkbox" name="agreement" required> С контрактом ознакомлен(а)</label>
+        </p>
+        
+        <p>
+            <button type="submit">Сохранить</button>
+        </p>
+    </form>
+</body>
+</html>
