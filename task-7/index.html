@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <h1>Галерея изображений</h1>
+        
+        <div class="gallery-wrapper">
+            <button class="gallery-nav prev" aria-label="Предыдущее изображение">←</button>
+            <button class="gallery-nav next" aria-label="Следующее изображение">→</button>
+            
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-slide">
+                    <img src="les-polyana-trava-zakat-vetki.jpg" alt="Изображение 1" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="frantsiia-berge-alpy-gory-skaly-kamni-vodopad-derevia-trava.jpg" alt="Изображение 2" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="islandiia-zima-skala-vodopad-sneg-sosulki.jpg" alt="Изображение 3" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="pole-trava-kolosia-zelen-solntse-nebo-oblaka.jpg" alt="Изображение 4" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="priroda-vesna-tsvetenie-vetka-tsvety-rozovyi.jpg" alt="Изображение 5" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="northern-lights-colors-night.jpg" alt="Изображение 6" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="pole-podsolnukhi-zheltye-tuman-utro.jpg" alt="Изображение 7" class="gallery-image">
+                </div>
+                <div class="gallery-slide">
+                    <img src="frantsiia-savoie-gory-kholmy-trava-tsvety-zelen-solntse-nebo.jpg" alt="Изображение 8" class="gallery-image">
+                </div>
+            </div>
+        </div>
+        
+        <div class="pager">
+            <div class="pager-info">
+                Страница <span id="currentPage">1</span> из <span id="totalPages">3</span>
+            </div>
+            <div class="pager-dots" id="pagerDots">
+            </div>
+        </div>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
