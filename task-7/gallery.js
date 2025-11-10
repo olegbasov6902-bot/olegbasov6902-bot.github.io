@@ -16,15 +16,38 @@ document.addEventListener('DOMContentLoaded', function() {
         if (width <= 768) return 1;
         if (width <= 1024) return 2;
         return 3;
-        }
-    
+    }
     
     function calculateTotalPages() {
         slidesPerView = getSlidesPerView();
         totalPages = Math.ceil(totalSlides / slidesPerView);
         totalPagesSpan.textContent = totalPages;
+
+        const slides = galleryTrack.children;
+        const slideWidth = 100/slidesPerView;
+
+        for (let slide of slides) {
+            slide.style.flex = `0 0 ${slideWidth}%`;
+            slide.style.maxWidth = `${slideWidth}%`;
+        }        
     }
     
+    function fixContainerOverflow() {
+        const galleryContainer = galleryTrack.parentElement;
+        galleryContainer.style.overflow = 'hidden';
+        galleryContainer.style.width = '100%';
+    }
+
+
+    function updateSlideWidths() {
+        const slides = galleryTrack.children;
+        const slideWidth = 100 / slidesPerView;
+        
+        for (let slide of slides) {
+            slide.style.flex = `0 0 ${slideWidth}%`;
+            slide.style.maxWidth = `${slideWidth}%`;
+        }
+    }
     
     function createPagerDots() {
         pagerDots.innerHTML = '';
@@ -37,14 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    
     function updatePagerDots() {
         const dots = pagerDots.querySelectorAll('.pager-dot');
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
-    
     
     function goToPage(pageIndex) {
         currentSlide = pageIndex;
@@ -54,24 +75,20 @@ document.addEventListener('DOMContentLoaded', function() {
         updateNavButtons();
     }
     
-    
     function updateGalleryPosition() {
-        const slideWidth = 100 / slidesPerView;
-        const translateX = -currentSlide * slideWidth;
+        // ПРАВИЛЬНОЕ ВЫЧИСЛЕНИЕ СМЕЩЕНИЯ
+        const translateX = -currentSlide * 100; // Смещаем на 100% за каждый шаг
         galleryTrack.style.transform = `translateX(${translateX}%)`;
     }
-    
     
     function updatePagerInfo() {
         currentPageSpan.textContent = currentSlide + 1;
     }
     
-    
     function updateNavButtons() {
         prevButton.disabled = currentSlide === 0;
         nextButton.disabled = currentSlide === totalPages - 1;
     }
-    
     
     function nextSlide() {
         if (currentSlide < totalPages - 1) {
@@ -83,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    
     function prevSlide() {
         if (currentSlide > 0) {
             currentSlide--;
@@ -94,13 +110,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    
     function initGallery() {
+        // ИНИЦИАЛИЗИРУЕМ ШИРИНУ СЛАЙДОВ ПРИ ЗАГРУЗКЕ
+        updateSlideWidths();
         calculateTotalPages();
         createPagerDots();
         updateGalleryPosition();
         updatePagerInfo();
         updateNavButtons();
+        fixContainerOverflow();
         
         prevButton.addEventListener('click', prevSlide);
         nextButton.addEventListener('click', nextSlide);
